@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Neighbour Helping App</title>
+  <link rel="stylesheet" href="./css/header.css">
+  <style>
+    :root {
+      --primary-color: #4f46e5;
+      --primary-hover: #4338ca;
+      --error-color: #ef4444;
+      --success-color: #10b981;
+      --text-color: #1f2937;
+      --text-light: #6b7280;
+      --text-lighter: #9ca3af;
+      --border-color: #e5e7eb;
+      --bg-color: #f9fafb;
+      --white: #ffffff;
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --radius: 8px;
+      --transition: all 0.2s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      height: 100%;
+    }
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .login-card {
+      background: var(--white);
+      padding: 32px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    select, input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: var(--primary-color);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    button:hover {
+      background-color: var(--primary-hover);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="login-card">
+      <h2>Login</h2>
+      <form action="joblogin.php" method="POST">
+        <select name="role" required>
+          <option value="">Select Role</option>
+          <option value="worker">Worker</option>
+          <option value="shopkeeper">Shopkeeper</option>
+        </select>
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="password" name="password" placeholder="Password" required />
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

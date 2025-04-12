@@ -11,7 +11,8 @@ $sql = "INSERT INTO shopkeepers (name, email, phone, shop_name, password)
         VALUES ('$name', '$email', '$phone', '$shop_name', '$password')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Shopkeeper registered successfully!";
+    header("Location: joblogin.html");
+    exit();
 } else {
     echo "Error: " . $conn->error;
 }

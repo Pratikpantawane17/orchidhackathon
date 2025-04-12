@@ -11,7 +11,8 @@ $sql = "INSERT INTO workers (name, email, phone, skillset, password)
         VALUES ('$name', '$email', '$phone', '$skillset', '$password')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "Worker registered successfully!";
+    header("Location: joblogin.html");
+    exit();
 } else {
     echo "Error: " . $conn->error;
 }
