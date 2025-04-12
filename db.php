@@ -6,7 +6,7 @@ $username = "root"; // Replace with your database username
 $password = "";
 $dbname = "neighbor_helping_app"; 
 // $port="3308";
-$port="3308";
+$port="3306";
 
 
 // Create a connection

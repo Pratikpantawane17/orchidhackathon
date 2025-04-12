@@ -136,10 +136,13 @@
     </nav>
     <div class="register-container">
         <h2>Register</h2>
-        <form action="register.php" method="POST">
+        <form action="register.php" method="POST" enctype="multipart/form-data">
+
             <input type="text" name="name" placeholder="Full Name" required>
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
+            <label>Aadhar Image:</label>
+    <input type="file" name="aadhar_image" accept="image/*" required>
             <button type="submit">Register</button>
         </form>
          </div>
