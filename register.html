@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #f9f9f9, #8fe9efc4);
+            flex-direction: column;
+        }
+
+        .register-container {
+            background: linear-gradient(-90deg, #f2f2f2 0%, #1adff5 100%);
+            border: 5px solid white;
+            width: 400px;
+            height: 50vh;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .register-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .register-container input[type="email"],
+        .register-container input[type="password"],
+        .register-container input[type="text"] {
+            width: 95%;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .register-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2193b0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 30px;
+            display: inline;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .register-container button:hover{
+            transform: scale(1.03);
+        }
+        
+
+        .register-container button:hover {
+            background-color: #1b7a93;
+        }
+
+        .register-container a {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #2193b0;
+            text-decoration: none;
+        }
+
+        .register-container a:hover {
+            text-decoration: underline;
+        }
+
+        nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        background: linear-gradient(-90deg, #f2f2f2 40%, #1adff5 100%);
+        border-radius: 20px;
+        margin-bottom: 20px;
+        border: 5px solid rgb(253, 255, 255); 
+        position: absolute;
+        top: 0;
+        width: 96%;
+      }
+      
+      nav .link-header a {
+        color: #000000;
+        text-decoration: none;
+        margin: 0 15px;
+        margin-top: 8%;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 2px solid black;
+        padding: 7px;
+        background-color: #4ee3ea;
+        animation-delay: 1s;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        display: inline-block;
+      }
+      nav .link-header :hover{
+        background-color: #f8f8f8;
+        transform: scale(1.1);
+       
+      }
+      nav h1{
+        margin-left: 10%;
+      }
+      a{
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 3vh;
+      }
+      nav  a{
+        color: #000000;
+      }
+    </style>
+    
+</head>
+<body>
+    <nav>
+        <div><h1><a href="index.html">CommUnity</a></h1></div>
+        <div class="link-header">
+      
+      <a href="login.html">LogIn </a></div>
+      
+    </nav>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form action="register.php" method="POST">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+         </div>
+</body>
+</html>
+
+
+
+
+

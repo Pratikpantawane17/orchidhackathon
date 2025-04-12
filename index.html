@@ -1,0 +1,247 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>NixtNode</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        background-color: #d9e4e7b5;
+        color: #000000cb;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+      }
+      .header {
+       background: linear-gradient(180deg, #f2f2f2 0%, #1adff5 100%);
+         border-radius: 20px;
+        padding: 40px 20px;
+        position: relative;
+        overflow: hidden;
+        height: 450px;
+        border: 5px solid rgb(255, 255, 255);
+      }
+      .header::before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        z-index: 1;
+      }
+      .header::after {
+        content: "";
+        position: absolute;
+        bottom: -50px;
+        right: -50px;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        z-index: 1;
+      }
+      .header p {
+        font-size: 18px;
+        margin: 40px 0;
+        z-index: 2;
+        position: relative;
+      }
+      .header .btn {
+        background-color: #000000;
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        z-index: 2;
+        position: relative;
+
+      }
+      .stats {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+        z-index: 1;
+
+      }
+      .stat {
+        background-color: #fff8f8;
+        border-radius: 20px;
+        padding: 20px;
+        width: 30%;
+        position: relative;
+        display: inline;
+        transition-delay: 1s;
+        transition: transform 0.5s ease;
+        border: 4px solid rgb(28, 145, 154);
+      }
+      .stat:hover{
+        transform: scale(1.1);
+        border: 4px solid rgb(28, 145, 154);
+      
+      }
+
+      .stat h2 {
+        font-size: 36px;
+        margin: 0;
+      }
+      .stat p {
+        font-size: 16px;
+        margin: 10px 0 0;
+      }
+      .avatars {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 10px;
+        border: 5px solid rgb(18, 216, 226);
+      }
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        background: linear-gradient(-90deg, #f2f2f2 40%, #1adff5 100%);
+        border-radius: 20px;
+        margin-bottom: 20px;
+        border: 5px solid rgb(253, 255, 255); 
+      }
+      
+      nav a {
+        color: #000000;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 2px solid black;
+        padding: 7px;
+        background-color: #4ee3ea;
+        animation-delay: 1s;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        display: inline-block;
+      }
+      nav a:hover{
+        background-color: #f8f8f8;
+        transform: scale(1.1);
+       
+      }
+      .link-header{
+        padding-left: 10%;
+        padding-top: 3vh;
+      }
+      a:not(#stat1){
+        color: #f9f8f8;
+        text-decoration: none;
+        font-size: 3vh;
+      }
+      
+      #stat1
+      {
+        text-decoration: none;
+        color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+        <div><h1>CommUnity</h1></div>
+        <div class="link-header">
+      <a href="register.html"> Register </a>
+      <a href="login.html">LogIn </a></div>
+      
+    </nav>
+    <div class="container">
+      <div class="header">
+        <h1
+          style="
+            font-size: 48px;
+            font-weight: 700;
+            margin: 0;
+            z-index: 2;
+            position: relative;
+          "
+        >
+        CommUnity
+        </h1>
+        <p></p>
+        <p>
+            Renowned for connecting neighbors with ease, our state-of-the-art platform empowers communities by offering seamless communication and assistance. Our app simplifies the process of requesting and offering help, ensuring that every need is met with speed and efficiency, just like the backbone of a strong network.
+        </p>
+        <button class="btn"><a href="register.html">register</a></button>
+
+        <a href="emergency.html" id="stat1">
+        <div class="stats">
+            <div class="stat">
+              <h2>Call</h2>
+              <p>emergency call</p>
+            </div>
+            <div class="stat">
+              <h2>Location</h2>
+              <p>emergency location send</p>
+            </div>
+          </div>
+      </div>
+    </a>
+    
+      <div class="avatars">
+        <div class="avatar">
+          <img
+            alt="Avatar 1"
+            height="50"
+            src="./avtar1.png"
+            width="50"
+          />
+        </div>
+        <div class="avatar">
+          <img
+            alt="Avatar 2"
+            height="50"
+            src="avtar2.png"
+            width="50"
+          />
+        </div>
+        <div class="avatar">
+          <img
+            alt="Avatar 3"
+            height="50"
+            src="avtar3.png"
+            width="50"
+          />
+        </div>
+        <div class="avatar">
+          <img
+            alt="Avatar 4"
+            height="50"
+            src="avtar4.png"
+            width="50"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
