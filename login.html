@@ -1,142 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(to bottom right, #f9f9f9, #8fe9efc4);
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="./css/header.css">
+  <style>
+    :root {
+      --primary-color: #4f46e5;
+      --primary-hover: #4338ca;
+      --error-color: #ef4444;
+      --success-color: #10b981;
+      --text-color: #1f2937;
+      --text-light: #6b7280;
+      --text-lighter: #9ca3af;
+      --border-color: #e5e7eb;
+      --bg-color: #f9fafb;
+      --white: #ffffff;
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --radius: 8px;
+      --transition: all 0.2s ease;
+    }
 
-        .login-container {
-            background: linear-gradient(-90deg, #f2f2f2 0%, #1adff5 100%);
-            border: 5px solid white;
-            width: 400px;
-            height: 50vh;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        .login-container h2 {
-            margin-bottom: 20px;
-            color: #333;
-        }
+    html, body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      height: 100%;
+    }
 
-        .login-container input[type="email"],
-        .login-container input[type="password"] {
-            width: 95%;
-            padding: 10px;
-            margin: 20px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-        }
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 420px;
+      width: 100%;
+    }
 
-        .login-container button {
-            width: 100%;
-            padding: 10px;
-            background-color: #2193b0;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            margin-top: 30px;
-            display: inline;
-            transition: transform 0.3s ease-in-out;
-        }
+    .login-card {
+      background: var(--white);
+      padding: 32px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
 
-        .login-container button:hover{
-            transform: scale(1.03);
-        }
+    .login-header h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      color: var(--text-color);
+    }
 
-        .login-container button:hover {
-            background-color: #1b7a93;
-        }
+    .login-header p {
+      color: var(--text-light);
+      font-size: 16px;
+      margin-bottom: 24px;
+    }
 
-        .login-container a {
-            display: block;
-            margin-top: 10px;
-            font-size: 14px;
-            color: #2193b0;
-            text-decoration: none;
-        }
+    .form-group {
+      margin-bottom: 20px;
+    }
 
-        .login-container a:hover {
-            text-decoration: underline;
-        }        nav {
-        display: flex;
-        justify-content: space-between;
-        padding: 5px;
-        background: linear-gradient(-90deg, #f2f2f2 40%, #1adff5 100%);
-        border-radius: 20px;
-        margin-bottom: 20px;
-        border: 5px solid rgb(253, 255, 255); 
-        position: absolute;
-        top: 0;
-        width: 96%;
-      }
-      
-      nav .link-header a {
-        color: #000000;
-        text-decoration: none;
-        margin: 0 15px;
-        margin-top: 8%;
-        font-size: 16px;
-        border-radius: 10px;
-        border: 2px solid black;
-        padding: 7px;
-        background-color: #4ee3ea;
-        animation-delay: 1s;
-        transition: transform 0.3s ease, background-color 0.3s ease;
-        display: inline-block;
-      }
-      nav .link-header :hover{
-        background-color: #f8f8f8;
-        transform: scale(1.1);
-       
-      }
-      nav h1{
-        margin-left: 10%;
-      }
-      a{
-        color: #ffffff;
-        text-decoration: none;
-        font-size: 3vh;
-      }
-      nav  a{
-        color: #000000;
-      }
-    </style>
-    
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      transform: translateY(-50%);
+      color: var(--text-lighter);
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px 40px 12px 40px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      font-size: 16px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    }
+
+    .toggle-password {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .forgot-password {
+      font-size: 14px;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .forgot-password:hover {
+      text-decoration: underline;
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 12px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .login-button:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .divider {
+      text-align: center;
+      margin: 20px 0;
+      color: var(--text-light);
+    }
+
+    .social-logins {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-button {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      background: white;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .signup-link {
+      margin-top: 16px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .signup-link a {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+
+    .error {
+      color: var(--error-color);
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div><h1><a href="index.html">CommUnity</a></h1></div>
-        <div class="link-header">
-      <a href="register.html">Register</a>
-      </div>
-      
-    </nav>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form action="login.php" method="POST">
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-        <a href="register.html">Don't have an account? Register</a>
+
+
+  <header>
+    <div class="logo">
+      <img src="./assets/logo1.png" class="logo1_img" />
+      <span class="header_logo">CommUnity</span>
     </div>
+  
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+  </header>
+  
+
+
+
+  <div class="container">
+    <div class="login-card">
+      <div class="login-header">
+        <h1>Welcome back</h1>
+        <p>Enter your credentials to access your account</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <div class="input-wrapper">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M4 4h16v16H4z" fill="none"/>
+              <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <input type="email" id="email" placeholder="name@example.com" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="label-row">
+            <label for="password">Password</label>
+            <a href="#" class="forgot-password">Forgot password?</a>
+          </div>
+          <div class="input-wrapper">
+            <svg class="input-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            <input type="password" id="password" placeholder="••••••••" required />
+            <button type="button" id="togglePassword" class="toggle-password" aria-label="Toggle password visibility">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group remember-me">
+          <label class="checkbox-container">
+            <input type="checkbox" id="remember" /> Remember me for 30 days
+          </label>
+        </div>
+
+        <div class="error" id="errorMsg"></div>
+
+        <button type="submit" class="login-button">Log in</button>
+      </form>
+
+      <div class="divider">or continue with</div>
+
+      <div class="social-logins">
+        <button type="button" class="social-button">Google</button>
+        <button type="button" class="social-button">Apple</button>
+      </div>
+
+      <div class="signup-link">
+        <p>Don't have an account? <a href="./signUp.html">Sign up</a></p>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./js/header.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('loginForm');
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const togglePassword = document.getElementById('togglePassword');
+      const errorMsg = document.getElementById('errorMsg');
+
+      // Toggle password visibility
+      togglePassword.addEventListener('click', function () {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+      });
+
+      // Submit login form
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const email = emailInput.value.trim();
+        const password = passwordInput.value.trim();
+
+        fetch('http://localhost:9191/api/neighbours/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, password }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.token) {
+            localStorage.setItem("token", data.token);
+            localStorage.setItem("neighbourid", data.userId);
+            window.location.href = '/hackathon/Frontend/post-request.html';
+          } else {
+            errorMsg.textContent = 'Invalid credentials. Please try again.';
+          }
+        })
+        .catch(() => {
+          errorMsg.textContent = 'An error occurred. Please try again later.';
+        });
+      });
+    });
+  </script>
 </body>
 </html>

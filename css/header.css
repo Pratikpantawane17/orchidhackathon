@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(
+      circle at 80% 0%,
+      #daf1f9 0%,
+      #f1e8f6 50%,
+      #f0f0f0 70%,
+      #dfeaed9e 100%
+    );
+  }
+
+  /* Header & Navigation */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .logo1_img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .header_logo {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.overlay-active {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  nav.overlay-active a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  nav.overlay-active a:hover {
+    color: #ffcc00;
+  }
+
+  .profile_photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .close-icon {
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+  }
+
+  @media (min-width: 768px) {
+    nav {
+      display: flex !important;
+      position: static !important;
+      height: auto !important;
+      width: auto !important;
+      background: transparent !important;
+      flex-direction: row !important;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 24px;
+    }
+
+    nav a {
+      color: #000;
+      font-size: 16px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #28a745;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    .close-icon {
+      display: none;
+    }
+
+    .profile_photo {
+      width: 40px;
+      height: 40px;
+    }
+  }
