@@ -612,26 +612,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </div>
     </div>
   </div>
-  <div id="shopkeepers" class="tab-content">
-  <h3 class="section-title">Available Shopkeepers</h3>
+  <div id="jobs" class="tab-content">
+  <h3 class="section-title">Available Jobs</h3>
   <div class="section-content">
     <div class="card">
-      <ul class="shopkeepers-list" style="list-style: none; padding: 0;">
+      <ul class="jobs-list" style="list-style: none; padding: 0;">
         <?php
-        // Query to fetch all shopkeepers except the logged-in user
-        $query = "SELECT * FROM shopkeepers WHERE email != '{$user['email']}'";
+        // Query to fetch jobs along with shopkeeper details, excluding current user
+        $query = "SELECT jobs.*, shopkeepers.name AS shopkeeper_name, shopkeepers.shop_name, shopkeepers.email, shopkeepers.phone 
+                  FROM jobs 
+                  JOIN shopkeepers ON jobs.shopkeeper_id = shopkeepers.id 
+                  WHERE shopkeepers.email != '{$user['email']}' 
+                  ORDER BY jobs.created_at DESC";
         $result = $conn->query($query);
 
-        // Loop through and display shopkeepers with additional details
+        // Loop through and display job + shopkeeper details
         while ($row = $result->fetch_assoc()) {
             echo "<li style='margin-bottom: 15px; padding: 10px; border-bottom: 1px solid #ccc;'>
-                    <strong>Name:</strong> " . htmlspecialchars($row['name']) . "<br>
-                    <strong>Shop:</strong> " . htmlspecialchars($row['shop_name']) . "<br>
+                    <strong>Job Title:</strong> " . htmlspecialchars($row['job_title']) . "<br>
+                    <strong>Description:</strong> " . htmlspecialchars($row['job_description']) . "<br>
+                    <strong>Location:</strong> " . htmlspecialchars($row['location']) . "<br>
+                    <strong>Wages:</strong> " . htmlspecialchars($row['wages']) . "<br>
+                    <strong>Posted By:</strong> " . htmlspecialchars($row['shopkeeper_name']) . " (" . htmlspecialchars($row['shop_name']) . ")<br>
                     <strong>Email:</strong> " . htmlspecialchars($row['email']) . "<br>
                     <strong>Phone:</strong> " . htmlspecialchars($row['phone']) . "<br>
-                    <strong>Location:</strong> " . htmlspecialchars($row['location'] ?? 'Not set') . "<br>
-                    <strong>Skillset:</strong> " . htmlspecialchars($row['skillset'] ?? 'Not set') . "<br>
-                    <strong>Other Skills:</strong> " . htmlspecialchars($row['other_skills'] ?? 'Not set') . "
+                    <strong>Posted At:</strong> " . htmlspecialchars($row['created_at']) . "
                   </li>";
         }
         $conn->close();
@@ -640,6 +645,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
   </div>
 </div>
+
 
 
   <a href="logout.php" class="logout-btn">Logout</a>

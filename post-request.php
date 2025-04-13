@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
        form {
             background-color: #fff;
-            padding: 20px;
+            padding: 25px;
             margin: 20px auto;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -86,6 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             display: block;
             width: 100%;
             font-size: 1rem;
+            margin-bottom: 20px;
         }
 
         input, textarea, select {
@@ -104,7 +105,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             padding: 12px;
             background-color: #4CAF50;
             color: white;
-            border: none;
             border-radius: 4px;
             cursor: pointer;
         }
@@ -123,6 +123,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             #map { height: 200px; }
             form { padding: 10px; }
             button { padding: 10px; font-size: 0.9rem; }
+        }
+
+        label {
+            padding: 5x;
         }
     </style>
 </head>
@@ -156,10 +160,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </center>
 <form method="POST">
     <label for="title">Request Title:</label>
-    <input type="text" id="title" name="title" placeholder="Request Title" required>
+    <input type="text" id="title" name="title" placeholder="Request Title" style="padding: 10px" required>
 
-    <label for="description">Request Details:</label>
-    <textarea id="description" name="description" placeholder="Request Details" rows="4" required></textarea>
+    <label for="description" >Request Details:</label>
+    <textarea id="description" name="description" placeholder="Request Details" rows="4" style="padding: 10px" required></textarea>
 
     <label for="category">Category:</label>
     <select id="category" name="category">
