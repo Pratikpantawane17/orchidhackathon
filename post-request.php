@@ -188,6 +188,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <p>Longitude: <?php echo htmlspecialchars($savedLongitude); ?></p>
 </div>
 
+<script
+    src="https://app.wonderchat.io/scripts/wonderchat.js"
+    data-name="wonderchat"
+    data-address="app.wonderchat.io"
+    data-id="cm9f5mmos10uzkbvo3u2j4kiy"
+    data-widget-size="normal"
+    data-widget-button-size="normal"
+  
+    defer
+  ></script>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-search/3.0.4/leaflet-search.min.js" defer></script>
 
