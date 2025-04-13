@@ -43,20 +43,32 @@ $result = $stmt->get_result();
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
-<nav class="bg-white shadow-sm p-4 flex justify-between items-center">
-  <!-- Logo Section -->
-  <div class="flex items-center space-x-3">
-    <img src="./assets/logo1.png" alt="CommUnity Logo" class="rounded-full w-11 h-11">
-    <h1 class="text-xl font-bold text-black">CommUnity</h1>
-  </div>
 
-  <!-- Links -->
-  <div class="space-x-4">
-    <a href="job.html" class="bg-cyan-700 text-white px-4 py-2 rounded hover:bg-cyan-800 transition">Jobs</a>
-    <a href="register.html" class="text-gray-700 hover:text-black font-medium">Register</a>
-    <a href="login.html" class="text-gray-700 hover:text-black font-medium">Login</a>
+
+<!-- Header -->
+<header class="py-4 shadow-md">
+  <div class="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-4">
+    
+    <!-- Left: Logo Section -->
+    <div class="flex items-center space-x-3">
+      <img src="./assets/logo1.png" alt="CommUnity Logo" class="rounded-full w-11 h-11">
+      <h1 class="text-2xl lg:text-3xl font-extrabold text-gray-800">CommUnity</h1>
+    </div>
+
+    <!-- Middle: Primary Nav Links -->
+    <nav class="flex flex-wrap justify-center gap-3">
+    <a href="dashboard.php" class="px-4 py-2 hover:bg-gray-200 transition">Dashboard</a>
+    <a href="post-request.php" class="px-4 py-2 hover:bg-gray-200 transition">Post Request</a>
+      <a href="offer-help.php" class="px-4 py-2 hover:bg-gray-200 transition">Offer Help</a>
+      <a href="profile.php" class="px-4 py-2 hover:bg-gray-200 transition">Profile</a>
+      <a href="ad.html" class="px-4 py-2 hover:bg-gray-200 transition">Advertisement</a>
+      <a href="logout.php" class="px-4 py-2 hover:bg-gray-200 transition">Logout</a>
+    </nav>
+
   </div>
-</nav>
+</header>
+
+
 
 
 
