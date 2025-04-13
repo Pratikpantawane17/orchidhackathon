@@ -244,7 +244,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $stmt->close();
       }
       ?>
-      <a href="logout.php" class="logout-btn">Logout</a>
+      <a href="logout.php" class="logout-btn " style="width:min-content">Logout</a>
     </div>
   </div>
 

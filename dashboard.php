@@ -100,7 +100,16 @@ if (!isset($_SESSION['user_id'])) {
         ?>
     </div>
 </main>
-
+<script
+    src="https://app.wonderchat.io/scripts/wonderchat.js"
+    data-name="wonderchat"
+    data-address="app.wonderchat.io"
+    data-id="cm9f5mmos10uzkbvo3u2j4kiy"
+    data-widget-size="normal"
+    data-widget-button-size="normal"
+  
+    defer
+  ></script>
 <script>
     window.onload = () => {
         document.getElementById('ad-popup').style.display = 'flex';
