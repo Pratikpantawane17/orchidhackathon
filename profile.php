@@ -96,8 +96,8 @@ $result = $stmt->get_result();
                             </form>
 
                             <!-- Delete Button -->
-                            <form action="delete_post.php" method="post" onsubmit="return confirm('Are you sure you want to delete this post?');">
-                                <input type="hidden" name="post_id" value="<?= $row['id'] ?>">
+                            <form action="delete_request.php" method="post" onsubmit="return confirm('Are you sure you want to delete this post?');">
+                                <input type="hidden" name="request_id" value="<?= $row['id'] ?>">
                                 <button type="submit" class="bg-red-500 text-white px-4 py-1 rounded hover:bg-red-600">Delete</button>
                             </form>
                         </div>
