@@ -176,7 +176,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 
 <div class="container">
-<a href="logout.php" class="logout-btn">Logout</a>
+
   <h1>Welcome, <?= htmlspecialchars($user['name']) ?> (<?= htmlspecialchars($user['shop_name']) ?>)</h1>
   <p>Email: <?= htmlspecialchars($user['email']) ?> | Phone: <?= htmlspecialchars($user['phone']) ?></p>
 
@@ -244,6 +244,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           $stmt->close();
       }
       ?>
+      <a href="logout.php" class="logout-btn">Logout</a>
     </div>
   </div>
 
