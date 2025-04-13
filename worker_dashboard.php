@@ -601,7 +601,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <div class="card">
         <h4>Update Your Preferences</h4>
         <form method="POST">
-          <input type="text" name="location" value="<?= htmlspecialchars($user['preferred_location'] ?? '') ?>" placeholder="Preferred Location">
+          <!-- <input type="text" name="location" value="<?= htmlspecialchars($user['preferred_location'] ?? '') ?>" placeholder="Preferred Location"> -->
+          <input type="text" name="location" id="locationInput" 
+       value="<?= htmlspecialchars($user['preferred_location'] ?? '') ?>" 
+       placeholder="Preferred Location" onblur="appendCoordinates()">
           <input type="text" name="fees" value="<?= htmlspecialchars($user['expected_fees'] ?? '') ?>" placeholder="Expected Wages / Fees">
           <input type="text" name="other_skills" value="<?= htmlspecialchars($user['other_skills'] ?? '') ?>" placeholder="Other Skills">
           <button type="submit">Update Preferences</button>
@@ -609,25 +612,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </div>
     </div>
   </div>
-
   <div id="shopkeepers" class="tab-content">
-    <h3 class="section-title">Available Shopkeepers</h3>
-    <div class="section-content">
-      <div class="card">
-        <ul class="shopkeepers-list">
-          <?php
-          $query = "SELECT * FROM shopkeepers WHERE email != '{$user['email']}'";
-          $result = $conn->query($query);
+  <h3 class="section-title">Available Shopkeepers</h3>
+  <div class="section-content">
+    <div class="card">
+      <ul class="shopkeepers-list" style="list-style: none; padding: 0;">
+        <?php
+        // Query to fetch all shopkeepers except the logged-in user
+        $query = "SELECT * FROM shopkeepers WHERE email != '{$user['email']}'";
+        $result = $conn->query($query);
 
-          while ($row = $result->fetch_assoc()) {
-              echo "<li><span>{$row['name']}</span> - {$row['shop_name']} - {$row['email']} - {$row['phone']}</li>";
-          }
-          $conn->close();
-          ?>
-        </ul>
-      </div>
+        // Loop through and display shopkeepers with additional details
+        while ($row = $result->fetch_assoc()) {
+            echo "<li style='margin-bottom: 15px; padding: 10px; border-bottom: 1px solid #ccc;'>
+                    <strong>Name:</strong> " . htmlspecialchars($row['name']) . "<br>
+                    <strong>Shop:</strong> " . htmlspecialchars($row['shop_name']) . "<br>
+                    <strong>Email:</strong> " . htmlspecialchars($row['email']) . "<br>
+                    <strong>Phone:</strong> " . htmlspecialchars($row['phone']) . "<br>
+                    <strong>Location:</strong> " . htmlspecialchars($row['location'] ?? 'Not set') . "<br>
+                    <strong>Skillset:</strong> " . htmlspecialchars($row['skillset'] ?? 'Not set') . "<br>
+                    <strong>Other Skills:</strong> " . htmlspecialchars($row['other_skills'] ?? 'Not set') . "
+                  </li>";
+        }
+        $conn->close();
+        ?>
+      </ul>
     </div>
   </div>
+</div>
 
 
   <a href="logout.php" class="logout-btn">Logout</a>
@@ -846,6 +858,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     document.getElementById(tabName).classList.add('active');
     document.querySelector(`.tab[onclick="showTab('${tabName}')"]`).classList.add('active-tab');
   }
+
+  
 </script>
 
 </body>
