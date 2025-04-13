@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <style>
+        .message-box {
+            max-height: 300px;
+            overflow-y: scroll;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .message {
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        .message.sent {
+            background-color: #d1ffd1;
+            text-align: right;
+        }
+        .message.received {
+            background-color: #f1f1f1;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<div class="chat-container">
+    <h2>Chat</h2>
+    
+    <div class="message-box">
+        <?php while ($row = $messages->fetch_assoc()) : ?>
+            <div class="message <?= ($row['sender_type'] === $user_type && $row['sender_id'] == $user_id) ? 'sent' : 'received' ?>">
+                <?= htmlspecialchars($row['message']) ?>
+            </div>
+        <?php endwhile; ?>
+    </div>
+
+    <form method="POST">
+        <input type="hidden" name="receiver_id" value="<?= htmlspecialchars($receiver_id) ?>">
+        <input type="hidden" name="receiver_type" value="<?= htmlspecialchars($receiver_type) ?>">
+        <textarea name="message" required placeholder="Type your message..." rows="3" cols="40"></textarea><br>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+</body>
+</html>

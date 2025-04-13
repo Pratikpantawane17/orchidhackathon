@@ -9,6 +9,50 @@
       box-sizing: border-box;
     }
 
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px;
+        background: linear-gradient(-90deg, #f2f2f2 40%, #1adff5 100%);
+        border-radius: 20px;
+        margin-bottom: 20px;
+        border: 5px solid rgb(253, 255, 255); 
+        position: absolute;
+        top: 0;
+        width: 96%;
+      }
+      
+      nav .link-header a {
+        color: #000000;
+        text-decoration: none;
+        margin: 0 15px;
+        margin-top: 8%;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 2px solid black;
+        padding: 7px;
+        background-color: #4ee3ea;
+        animation-delay: 1s;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        display: inline-block;
+      }
+      nav .link-header :hover{
+        background-color: #f8f8f8;
+        transform: scale(1.1);
+       
+      }
+      nav h1{
+        margin-left: 10%;
+      }
+      a{
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 3vh;
+      }
+      nav  a{
+        color: #000000;
+      }
     body {
       font-family: 'Segoe UI', sans-serif;
       background: #f3f4f6;
@@ -17,6 +61,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      background: linear-gradient(90deg, #f2f2f2 40%, #4ee2f3be 100%);
     }
 
     .login-container {
@@ -73,6 +118,13 @@
   </style>
 </head>
 <body>
+    <nav>
+        <div><h1><a href="index.html">CommUnity</a></h1></div>
+        <div class="link-header">
+      
+      <a href="login.html">LogIn </a></div>
+      
+    </nav>
   <div class="login-container">
     <h2>Login</h2>
     <form action="login.php" method="POST">
