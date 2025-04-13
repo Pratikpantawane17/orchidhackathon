@@ -43,19 +43,22 @@ $result = $stmt->get_result();
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
+<nav class="bg-white shadow-sm p-4 flex justify-between items-center">
+  <!-- Logo Section -->
+  <div class="flex items-center space-x-3">
+    <img src="./assets/logo1.png" alt="CommUnity Logo" class="rounded-full w-11 h-11">
+    <h1 class="text-xl font-bold text-black">CommUnity</h1>
+  </div>
 
-    <header class="bg-white shadow-md p-6 flex flex-col items-center">
-        <a href="dashboard.php">
-            <h1 class="text-4xl font-bold text-indigo-600">CommUnity</h1>
-        </a>
-        <nav class="mt-4 flex space-x-4 text-lg">
-            <a href="post-request.php" class="text-blue-600 hover:underline">Post Request</a>
-            <a href="offer-help.php" class="text-blue-600 hover:underline">Offer Help</a>
-            <a href="ad.html" class="text-blue-600 hover:underline">Job</a>
-            <a href="profile.php" class="text-blue-600 hover:underline font-semibold">Profile</a>
-            <a href="logout.php" class="text-red-500 hover:underline">Logout</a>
-        </nav>
-    </header>
+  <!-- Links -->
+  <div class="space-x-4">
+    <a href="job.html" class="bg-cyan-700 text-white px-4 py-2 rounded hover:bg-cyan-800 transition">Jobs</a>
+    <a href="register.html" class="text-gray-700 hover:text-black font-medium">Register</a>
+    <a href="login.html" class="text-gray-700 hover:text-black font-medium">Login</a>
+  </div>
+</nav>
+
+
 
     <main class="max-w-4xl mx-auto mt-10">
         <div class="bg-white rounded-xl shadow p-6 flex flex-col items-center">
