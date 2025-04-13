@@ -41,6 +41,18 @@ $result = $stmt->get_result();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+         body {
+        font-family: 'Arial', sans-serif;
+        background: radial-gradient(
+            circle at 80% 0%,
+            #daf1f9 0%,
+            #f1e8f6 50%,
+            #f0f0f0 70%,
+            #dfeaed9e 100%
+        );
+       }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans">
 
@@ -60,7 +72,7 @@ $result = $stmt->get_result();
     <a href="dashboard.php" class="px-4 py-2 hover:bg-gray-200 transition">Dashboard</a>
     <a href="post-request.php" class="px-4 py-2 hover:bg-gray-200 transition">Post Request</a>
       <a href="offer-help.php" class="px-4 py-2 hover:bg-gray-200 transition">Offer Help</a>
-      <a href="profile.php" class="px-4 py-2 hover:bg-gray-200 transition">Profile</a>
+      <a href="profile.php" class="px-4 py-2 hover:bg-gray-200 transition"  style="font-weight: 800">Profile</a>
       <a href="ad.html" class="px-4 py-2 hover:bg-gray-200 transition">Advertisement</a>
       <a href="logout.php" class="px-4 py-2 hover:bg-gray-200 transition">Logout</a>
     </nav>

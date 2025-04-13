@@ -4,37 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advertisement and Job Posts</title>
-    <!-- Tailwind CSS CDN -->
+  
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body, header, .side {
+        font-family: 'Arial', sans-serif;
+        background: radial-gradient(
+            circle at 80% 0%,
+            #daf1f9 0%,
+            #f1e8f6 50%,
+            #f0f0f0 70%,
+            #dfeaed9e 100%
+        );
+       }
+    </style>
 </head>
 <body class="bg-white text-gray-800">
 
     
-<!-- Navbar -->
-<header class="bg-gray-100 shadow-md">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-  
-      <!-- Left: Logo + Title -->
+<!-- Header -->
+<header class="py-4 shadow-md">
+    <div class="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-4">
+      
+      <!-- Left: Logo Section -->
       <div class="flex items-center space-x-3">
-        <img src="./assets/logo1.png" alt="CommUnity Logo" class="w-11 h-11 rounded-full">
-        <h1 class="text-2xl font-extrabold text-gray-900">CommUnity</h1>
+        <img src="./assets/logo1.png" alt="CommUnity Logo" class="rounded-full w-11 h-11">
+        <h1 class="text-2xl lg:text-3xl font-extrabold text-gray-800">CommUnity</h1>
       </div>
   
-      <!-- Right: Navigation Links -->
-      <nav class="flex space-x-6 text-lg font-medium text-gray-800">
-        <a href="dashboard.php" class="hover:text-cyan-700 transition">Dashboard</a>
-        <a href="post-request.php" class="hover:text-cyan-700 transition">Post Request</a>
-        <a href="offer-help.php" class="hover:text-cyan-700 transition">Offer Help</a>
-        <a href="profile.php" class="hover:text-cyan-700 transition">Profile</a>
-        <a href="ad.html" class="hover:text-cyan-700 transition">Advertisement</a>
-        <a href="logout.php" class="hover:text-red-600 transition">Logout</a>
+      <!-- Middle: Primary Nav Links -->
+      <nav class="flex flex-wrap justify-center gap-3">
+      <a href="dashboard.php" class="px-4 py-2 hover:bg-gray-200 transition">Dashboard</a>
+      <a href="post-request.php" class="px-4 py-2 hover:bg-gray-200 transition">Post Request</a>
+        <a href="offer-help.php" class="px-4 py-2 hover:bg-gray-200 transition">Offer Help</a>
+        <a href="profile.php" class="px-4 py-2 hover:bg-gray-200 transition"  style="font-weight: 800">Profile</a>
+        <a href="ad.html" class="px-4 py-2 hover:bg-gray-200 transition">Advertisement</a>
+        <a href="logout.php" class="px-4 py-2 hover:bg-gray-200 transition">Logout</a>
       </nav>
   
     </div>
   </header>
-    <div class="bg-white flex flex-col md:flex-row p-4 space-y-4 md:space-y-0">
+
+    <div class="bg-white flex flex-col md:flex-row p-4 space-y-4 md:space-y-0" class="side">
         <div class="md:w-1/4">
-            <!-- Left sidebar, currently empty -->
+            
         </div>
 
         <div class="flex-1 bg-gray-100 p-6 rounded-md shadow-lg">
@@ -42,7 +55,7 @@
 
             <button id="openFormBtn" class="mt-4 px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Post Ad/Job</button>
 
-            <!-- Modal Structure -->
+          
             <div id="formModal" class="modal hidden fixed inset-0 bg-black bg-opacity-50">
                 <div class="modal-content bg-white p-6 rounded-lg w-1/2 mx-auto mt-20 shadow-lg">
                     <span class="close text-gray-500 cursor-pointer absolute top-4 right-4 text-2xl">&times;</span>

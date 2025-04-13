@@ -38,6 +38,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['latitude']) && isset(
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        body {
+        font-family: 'Arial', sans-serif;
+        background: radial-gradient(
+            circle at 80% 0%,
+            #daf1f9 0%,
+            #f1e8f6 50%,
+            #f0f0f0 70%,
+            #dfeaed9e 100%
+        );
+       }
         #map {
             height: 400px;
             width: 100%;
@@ -87,27 +97,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['latitude']) && isset(
 </head>
 <body class="bg-gray-100">
 
-    <!-- Navbar -->
-    <header class="bg-white shadow-md py-4">
-        <div class="container mx-auto flex justify-between items-center px-6">
-            <!-- Left: Logo + Title -->
-            <div class="flex items-center space-x-3">
-                <img src="./assets/logo1.png" alt="CommUnity Logo" class="w-11 h-11 rounded-full">
-                <h1 class="text-2xl font-extrabold text-gray-900">CommUnity</h1>
-            </div>
-            <!-- Right: Navigation Links -->
-            <nav class="flex space-x-6 text-lg font-medium text-gray-800">
-                <a href="dashboard.php" class="hover:text-cyan-700 transition">Dashboard</a>
-                <a href="post-request.php" class="hover:text-cyan-700 transition">Post Request</a>
-                <a href="offer-help.php" class="hover:text-cyan-700 transition">Offer Help</a>
-                <a href="profile.php" class="hover:text-cyan-700 transition">Profile</a>
-                <a href="ad.html" class="hover:text-cyan-700 transition">Advertisement</a>
-                <a href="logout.php" class="hover:text-red-600 transition">Logout</a>
-            </nav>
-        </div>
-    </header>
+   <!-- Header -->
+<header class="py-4 shadow-md">
+  <div class="container mx-auto px-4 flex flex-col lg:flex-row justify-between items-center gap-4">
+    
+    <!-- Left: Logo Section -->
+    <div class="flex items-center space-x-3">
+      <img src="./assets/logo1.png" alt="CommUnity Logo" class="rounded-full w-11 h-11">
+      <h1 class="text-2xl lg:text-3xl font-extrabold text-gray-800">CommUnity</h1>
+    </div>
 
-    <!-- Main Content -->
+    <!-- Middle: Primary Nav Links -->
+    <nav class="flex flex-wrap justify-center gap-3">
+    <a href="dashboard.php" class="px-4 py-2 hover:bg-gray-200 transition">Dashboard</a>
+    <a href="post-request.php" class="px-4 py-2 hover:bg-gray-200 transition" >Post Request</a>
+      <a href="offer-help.php" class="px-4 py-2 hover:bg-gray-200 transition" style="font-weight: 800">Offer Help</a>
+      <a href="profile.php" class="px-4 py-2 hover:bg-gray-200 transition">Profile</a>
+      <a href="ad.html" class="px-4 py-2 hover:bg-gray-200 transition">Advertisement</a>
+      <a href="logout.php" class="px-4 py-2 hover:bg-gray-200 transition">Logout</a>
+    </nav>
+
+  </div>
+</header>
+
     <main class="max-w-4xl mx-auto py-8">
         <h2 class="text-2xl font-semibold mb-4">Select Your Location</h2>
         <div id="map"></div>
@@ -120,7 +132,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['latitude']) && isset(
         <h2 class="text-2xl font-semibold my-4">Help Requests Near You</h2>
 
         <?php
-        // Fetch and display help requests
+  
         if (isset($_SESSION['region'])) {
             $user_lat = $_SESSION['region']['latitude'];
             $user_lng = $_SESSION['region']['longitude'];

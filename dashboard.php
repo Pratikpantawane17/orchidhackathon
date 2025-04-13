@@ -55,7 +55,7 @@ if (!isset($_SESSION['user_id'])) {
 
     <!-- Middle: Primary Nav Links -->
     <nav class="flex flex-wrap justify-center gap-3">
-    <a href="dashboard.php" class="px-4 py-2 hover:bg-gray-200 transition">Dashboard</a>
+    <a href="dashboard.php" class="px-4 py-2 hover:bg-gray-200 transition" style="font-weight: 800">Dashboard</a>
     <a href="post-request.php" class="px-4 py-2 hover:bg-gray-200 transition">Post Request</a>
       <a href="offer-help.php" class="px-4 py-2 hover:bg-gray-200 transition">Offer Help</a>
       <a href="profile.php" class="px-4 py-2 hover:bg-gray-200 transition">Profile</a>
